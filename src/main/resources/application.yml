@@ -6,9 +6,9 @@ logging:
     level:
       com.sbd.reinvent:DEBUG
 
-amazon:
-  dynamodb:
-    endpoint: ${dynamo}
-  aws:
-    accesskey: ${accesskey}
-    secretkey: ${secretkey}
+#amazon:
+#  dynamodb:
+#    endpoint: http://dynamodb.us-east-1.amazonaws.com/
+#  aws:
+#    accesskey: ${SHELL}
+#    secretkey: ${SHELL}
