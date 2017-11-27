@@ -1,5 +1,7 @@
+.gitignore
 mvnw.cmd
 target/
 *.iml
 mvnw
 .idea/
+src/main/java/com/bah/reinvent/DynamoDBConfig.java

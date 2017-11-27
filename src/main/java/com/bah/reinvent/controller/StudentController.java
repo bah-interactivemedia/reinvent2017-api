@@ -1,6 +1,5 @@
 package com.bah.reinvent.controller;
 
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.bah.reinvent.model.Student;
 import com.bah.reinvent.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,37 +11,27 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-public class ControllerV1 {
+@RequestMapping(value = "students")
+public class StudentController {
 
     @Autowired
     private StudentRepository repo;
 
-    private AmazonDynamoDBClient dynamoDBClient;
 
-
-
-    @GetMapping(value = "/hello")
-    public ResponseEntity helloWorld(){
-
-        return new ResponseEntity("Hello World from Spring Boot!", HttpStatus.OK);
-
-    }
-
-    @GetMapping(value = "/test")
-    public Iterable<Student> getStudent(){
-
+    @GetMapping()
+    public Iterable<Student> getStudents(){
           return repo.findAll();
-//        return repo.findByLastName("Vargas");
     }
 
-    @PostMapping(value= "/test/post")
-    public Student postTest(@RequestBody Student student){
+    @PostMapping()
+    public Student createStudent(@RequestBody Student student) throws Exception {
         try {
             repo.save(student);
         } catch (Exception e){
-            System.out.println("Something went wrong");
+            throw new Exception("Unable to save data");
         }
         return student;
     }
+
 
 }
