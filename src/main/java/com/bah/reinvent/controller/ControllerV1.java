@@ -1,13 +1,12 @@
 package com.bah.reinvent.controller;
 
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.bah.reinvent.model.Student;
 import com.bah.reinvent.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +16,8 @@ public class ControllerV1 {
 
     @Autowired
     private StudentRepository repo;
+
+    private AmazonDynamoDBClient dynamoDBClient;
 
 
 
@@ -33,4 +34,15 @@ public class ControllerV1 {
           return repo.findAll();
 //        return repo.findByLastName("Vargas");
     }
+
+    @PostMapping(value= "/test/post")
+    public Student postTest(@RequestBody Student student){
+        try {
+            repo.save(student);
+        } catch (Exception e){
+            System.out.println("Something went wrong");
+        }
+        return student;
+    }
+
 }

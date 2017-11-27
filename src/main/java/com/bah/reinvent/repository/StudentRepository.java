@@ -7,6 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 @EnableScan
-public interface StudentRepository extends CrudRepository<Student, String> {
-    List<Student> findByLastName(String lastName);
+public interface StudentRepository extends CrudRepository<Student, Integer> {
 }
