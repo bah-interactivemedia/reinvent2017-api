@@ -29,7 +29,7 @@ public class StudentActivity implements Serializable {
         return studentTestActivity1FieldTotal;
     }
     @DynamoDBAttribute(attributeName = "student_test_activity_2_field_minutes")
-    public String getStudent_test_activity_2_field_minutes() {
+    public String getStudentTestActivity2FieldMinutes() {
         return studentTestActivity2FieldMinutes;
     }
     @DynamoDBAttribute(attributeName = "student_test_activity_2_field_seconds")
@@ -37,7 +37,7 @@ public class StudentActivity implements Serializable {
         return studentTestActivity2FieldSeconds;
     }
     @DynamoDBAttribute(attributeName = "student_test_id")
-    public String getStudent_test_id() {
+    public String getStudentTestId() {
         return studentTestId;
     }
 
@@ -46,21 +46,27 @@ public class StudentActivity implements Serializable {
     public String getTestId() {
         return testId;
     }
+
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
+
     public void setStudentTestActivity1FieldTotal(String studentTestActivity1FieldTotal) {
         this.studentTestActivity1FieldTotal = studentTestActivity1FieldTotal;
     }
-    public void setStudent_test_activity_2_field_minutes(String student_test_activity_2_field_minutes) {
-        this.studentTestActivity2FieldMinutes = student_test_activity_2_field_minutes;
+
+    public void setStudentTestActivity2FieldMinutes(String studentTestActivity2FieldMinutes) {
+        this.studentTestActivity2FieldMinutes = studentTestActivity2FieldMinutes;
     }
+
     public void setStudentTestActivity2FieldSeconds(String studentTestActivity2FieldSeconds) {
         this.studentTestActivity2FieldSeconds = studentTestActivity2FieldSeconds;
     }
-    public void setStudent_test_id(String student_test_id) {
-        this.studentTestId = student_test_id;
+
+    public void setStudentTestId(String studentTestId) {
+        this.studentTestId = studentTestId;
     }
+
     public void setTestId(String testId) {
         this.testId = testId;
     }

@@ -8,5 +8,5 @@ import java.util.List;
 
 @EnableScan
 public interface StudentTestRepository extends CrudRepository<StudentActivity, Integer> {
-    List<StudentActivity> findByStudentIdAndTestId(String studentID, String testId );
+    StudentActivity findByStudentIdAndTestId(String studentID, String testId );
 }
