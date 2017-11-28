@@ -27,7 +27,7 @@ public class ApiApplication {
 				.groupName("v1")
 				.apiInfo(apiInfo())
 				.select()
-				.paths(or(regex("/tests.*"), regex("/students/*")))
+				.paths(or(regex("/tests.*"), regex("/students.*")))
 				.build();
 	}
 
