@@ -9,5 +9,6 @@ import java.util.List;
 @EnableScan
 public interface StudentAttribRepo extends CrudRepository<StudentAttrib, String>{
     List<StudentAttrib> findByStudentId(String id);
+    List<StudentAttrib> findByClassId(String classID);
 
 }

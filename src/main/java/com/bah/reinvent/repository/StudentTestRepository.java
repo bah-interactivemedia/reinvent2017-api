@@ -9,4 +9,5 @@ import java.util.List;
 @EnableScan
 public interface StudentTestRepository extends CrudRepository<StudentActivity, Integer> {
     StudentActivity findByStudentIdAndTestId(String studentID, String testId );
+    List<StudentActivity> findByStudentId(String studentId);
 }
